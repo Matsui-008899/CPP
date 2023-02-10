@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.beardedhen.androidbootstrap.BootstrapLabel;
 
 public class ImageActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -44,6 +45,10 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
+
+        BootstrapLabel label = findViewById(R.id.ImgTextView);
+        label.setTextSize(25);
+
 
         // Viewを取得
         //カウント

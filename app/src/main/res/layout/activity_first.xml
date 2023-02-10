@@ -7,119 +7,144 @@
     android:background="@drawable/p0468_m"
     tools:context=".FirstActivity">
 
-    <com.beardedhen.androidbootstrap.BootstrapLabel
-        android:id="@+id/firstTitle"
-        android:layout_width="250dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:autoSizeMaxTextSize="28sp"
-        android:autoSizeTextType="uniform"
-        android:text="@string/fst_title"
-        android:textSize="34sp"
-        app:bootstrapBrand="regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/syoki1" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/firstWarning"
-        android:layout_width="240dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="104dp"
-        android:text="@string/fst_warning"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstPassword" />
+        <LinearLayout
+            android:id="@+id/layerCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
 
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/firstPassword"
-        android:layout_width="276dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="68dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/fst_enter"
-        android:inputType="number"
-        android:maxLength="5"
-        android:textSize="50sp"
-        app:bootstrapBrand="primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstTitle"
-        app:roundedCorners="true" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/firstButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="168dp"
-        android:minHeight="48dp"
-        android:text="@string/fst_send"
-        app:bootstrapBrand="primary"
-        app:bootstrapSize="lg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstWarning"
-        app:roundedCorners="true" />
+            <TextView
+                android:id="@+id/syoki1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/syoki"
+                android:textSize="34sp" />
 
-    <TextView
-        android:id="@+id/syoki1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="138dp"
-        android:text="@string/syoki"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
-    <ImageView
-        android:id="@+id/mitarashi_first"
-        android:layout_width="149dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="92dp"
-        app:layout_constraintBottom_toTopOf="@+id/upa_first"
-        app:layout_constraintEnd_toStartOf="@+id/firstButton"
-        app:layout_constraintTop_toBottomOf="@+id/firstWarning"
-        app:srcCompat="@drawable/mitarashi22" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <ImageView
-        android:id="@+id/neko_first"
-        android:layout_width="201dp"
-        android:layout_height="268dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="157dp"
-        android:layout_marginBottom="16dp"
-        android:rotation="-90"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/upa_first"
-        app:layout_constraintTop_toBottomOf="@+id/firstPassword"
-        app:srcCompat="@drawable/neko22" />
+                <com.beardedhen.androidbootstrap.BootstrapLabel
+                    android:id="@+id/firstTitle"
+                    android:layout_width="250dp"
+                    android:layout_height="73dp"
+                    android:autoSizeMaxTextSize="28sp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/fst_title"
+                    android:textSize="34sp"
+                    app:bootstrapBrand="regular" />
 
-    <ImageView
-        android:id="@+id/upa_first"
-        android:layout_width="234dp"
-        android:layout_height="177dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="33dp"
-        app:layout_constraintEnd_toStartOf="@+id/neko_first"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mitarashi_first"
-        app:srcCompat="@drawable/u_pa_22" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/firstWarning"
+                    android:layout_width="240dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="@string/fst_warning"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <com.beardedhen.androidbootstrap.BootstrapEditText
+                        android:id="@+id/firstPassword"
+                        android:layout_width="276dp"
+                        android:layout_height="69dp"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/fst_enter"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:textSize="50sp"
+                        app:bootstrapBrand="primary"
+                        app:roundedCorners="true" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/firstButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="@string/fst_send"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:roundedCorners="true" />
+                </LinearLayout>
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/mitarashi_first"-->
+<!--                    android:layout_width="149dp"-->
+<!--                    android:layout_height="238dp"-->
+<!--                    android:layout_marginTop="9dp"-->
+<!--                    android:layout_marginEnd="92dp"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/upa_first"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/firstButton"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/firstWarning"-->
+<!--                    app:srcCompat="@drawable/mitarashi22" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/neko_first"-->
+<!--                    android:layout_width="201dp"-->
+<!--                    android:layout_height="268dp"-->
+<!--                    android:layout_marginStart="33dp"-->
+<!--                    android:layout_marginTop="157dp"-->
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    android:rotation="-90"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/upa_first"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/firstPassword"-->
+<!--                    app:srcCompat="@drawable/neko22" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/upa_first"-->
+<!--                    android:layout_width="234dp"-->
+<!--                    android:layout_height="177dp"-->
+<!--                    android:layout_marginStart="40dp"-->
+<!--                    android:layout_marginEnd="33dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/neko_first"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/mitarashi_first"-->
+<!--                    app:srcCompat="@drawable/u_pa_22" />-->
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

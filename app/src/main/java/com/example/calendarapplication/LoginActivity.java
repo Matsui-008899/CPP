@@ -12,6 +12,8 @@ import android.view.WindowManager;
 //import android.widget.Button;
 import com.beardedhen.androidbootstrap.AwesomeTextView;
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.beardedhen.androidbootstrap.BootstrapLabel;
+
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         EditText editPass = findViewById(R.id.password);
         editPass.setTextSize(50);
 
+        BootstrapLabel labe  = findViewById(R.id.textView);
+        labe.setTextSize(30);
+
         // Viewの取得
         password = findViewById(R.id.password);
         button = findViewById(R.id.button);
@@ -41,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         button.setOnClickListener(this);
 
         // スクショを無効化
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         // 文字制限
         password.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
         // 数字入力キーボード、パスワードを隠す
@@ -63,9 +68,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         );
         cursorP.getCount();
         if (cursorP.getCount() == 0) {
+            cursorP.close();
             Intent intent = new Intent(getApplication(), FirstActivity.class);
             startActivity(intent);
         }
+        cursorP.close();
     }
 
     // エラー回数

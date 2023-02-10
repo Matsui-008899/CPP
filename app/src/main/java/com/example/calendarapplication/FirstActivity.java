@@ -38,7 +38,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         firstButton.setOnClickListener(this);
 
         // スクショを無効化
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         // 文字制限
         firstPassword.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
         // 数字入力キーボード、パスワードを隠す

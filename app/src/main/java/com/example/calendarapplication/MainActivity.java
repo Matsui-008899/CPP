@@ -731,9 +731,13 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
         dateE = findViewById(R.id.dateE);
         timeE = findViewById(R.id.timeE);
         String taskNameS = taskName.getText().toString();
+        //開始日付
         String dateSS = dateS.getText().toString();
+        //開始時刻
         String timeSS = timeS.getText().toString();
+        //終了日付
         String dateES = dateE.getText().toString();
+        //終了時刻
         String timeES = timeE.getText().toString();
 
         TextInputLayout emailField = findViewById(R.id.emailField);
@@ -747,52 +751,60 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
           日付判定
           時刻が開始＞終了かつ日付が開始＜終了または
          */
-        if ((testSub < 0 && test <= 0) || (testSub >= 0 && test < 0) || TextUtils.isEmpty(taskNameS)) {
-            Log.d("debug", "正常に処理");
 
+        boolean flag = false;
 
-
-            if (TextUtils.isEmpty(taskNameS)) {
-                emailField.setError("予定を入力してください");
-
-                Log.d("debug", "null値判定,いずれかの値が空欄です");
-            } else {
-                values.put("startday", dateSS);
-                values.put("starttime", timeSS);
-                values.put("endday", dateES);
-                values.put("endtime", timeES);
-                values.put("task", taskNameS);
-                values.put("level", 0);
-                Log.d("debug", "**********" + values);
-                db.insert("taskdb", null, values);
-
-                CalendarLayout.setVisibility(View.VISIBLE);
-                TaskLayout.setVisibility(View.INVISIBLE);
-
-                Snackbar.make(view, "予定："+taskNameS + "が追加されました", Snackbar.LENGTH_LONG).show();
-
-                taskName.setText("");
-                Calendar c = Calendar.getInstance();
-                timeS.setText(String.format("%02d時%02d分", c.get(Calendar.HOUR), c.get(Calendar.MINUTE)));
-                dateS.setText(String.format("%d年%02d月%02d日", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH)));
-
-                timeE.setText(String.format("%02d時%02d分", c.get(Calendar.HOUR) + 1, c.get(Calendar.MINUTE)));
-                dateE.setText(String.format("%d年%02d月%02d日", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH)));
-
-                int i = Integer.parseInt(dateSS.substring(dateSS.indexOf("年") + 1, dateSS.indexOf("月")));
-                checkLoad[i] = false;
-
-                Log.d("debug", "旧idlist=" + idList.length);
-                int b = idList.length;
-                idList = Arrays.copyOf(idList, b + 1);
-                Log.d("debug", "新idlist=" + idList.length);
-            }
-        } else {
-            Log.d("debug", "日付に矛盾が発生");
-            error.setVisibility(View.VISIBLE);
-            error.setText("＊日付に矛盾が生じています");
+        if (TextUtils.isEmpty(taskNameS)) {
+            emailField.setError("予定を入力してください");
+            flag = true;
+        }else {
+            emailField.setErrorEnabled(false);
         }
 
+        Log.d("debug", "dslda："+test);
+        Log.d("debug", "dslda："+testSub);
+        if (test > 0 || (test == 0 && testSub > 0)){
+            error.setVisibility(View.VISIBLE);
+            error.setText("＊日付に矛盾が生じています");
+            flag = true;
+        }else{
+            error.setVisibility(View.GONE);
+        }
+
+
+        //フラグを通過していない
+        if (!flag){
+            values.put("startday", dateSS);
+            values.put("starttime", timeSS);
+            values.put("endday", dateES);
+            values.put("endtime", timeES);
+            values.put("task", taskNameS);
+            values.put("level", 0);
+            Log.d("debug", "**********" + values);
+            db.insert("taskdb", null, values);
+
+            CalendarLayout.setVisibility(View.VISIBLE);
+            TaskLayout.setVisibility(View.INVISIBLE);
+
+            Snackbar.make(view, "予定："+taskNameS + "が追加されました", Snackbar.LENGTH_LONG).show();
+
+            taskName.setText("");
+            Calendar c = Calendar.getInstance();
+            timeS.setText(String.format("%02d時%02d分", c.get(Calendar.HOUR), c.get(Calendar.MINUTE)));
+            dateS.setText(String.format("%d年%02d月%02d日", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH)));
+
+            timeE.setText(String.format("%02d時%02d分", c.get(Calendar.HOUR) + 1, c.get(Calendar.MINUTE)));
+            dateE.setText(String.format("%d年%02d月%02d日", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH)));
+
+            int i = Integer.parseInt(dateSS.substring(dateSS.indexOf("年") + 1, dateSS.indexOf("月")));
+            checkLoad[i] = false;
+
+            Log.d("debug", "旧idlist=" + idList.length);
+            int b = idList.length;
+            idList = Arrays.copyOf(idList, b + 1);
+            Log.d("debug", "新idlist=" + idList.length);
+            flag = false;
+        }
 
         Log.d("debug", "日付判定日にち" + test + "\n日付判定時刻" + testSub);
 

@@ -7,243 +7,234 @@
     android:background="@drawable/p0399_m"
     tools:context=".ImageActivity">
 
-    <com.beardedhen.androidbootstrap.BootstrapLabel
-        android:id="@+id/ImgTextView"
-        android:layout_width="333dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="33dp"
-        android:autoSizeTextType="uniform"
-        android:text="@string/img_title"
-        app:bootstrapBrand="success"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/button2"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="88dp"
-        android:autoSizeMaxTextSize="@dimen/bootstrap_h5_text_size"
-        android:autoSizeTextType="uniform"
-        android:text="@string/img_send"
-        app:bootstrapBrand="primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/nautilus"
-        app:roundedCorners="true" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <ImageView
-        android:id="@+id/imageZero"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/illustrain01_moji10"
-        app:layout_column="0"
-        app:layout_constraintEnd_toStartOf="@+id/imageOne"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView2"
-        app:layout_row="0" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" />
 
-    <ImageView
-        android:id="@+id/imageOne"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/illustrain01_moji01"
-        app:layout_column="1"
-        app:layout_constraintEnd_toStartOf="@+id/imageTwo"
-        app:layout_constraintStart_toEndOf="@+id/imageZero"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView2"
-        app:layout_row="0" />
+                <com.beardedhen.androidbootstrap.BootstrapLabel
+                    android:id="@+id/ImgTextView"
+                    android:layout_width="333dp"
+                    android:layout_height="73dp"
+                    android:text="@string/img_title"
+                    app:bootstrapBrand="success"
+                    android:gravity="center"/>
 
-    <ImageView
-        android:id="@+id/imageTwo"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_row="0"
-        android:layout_column="2"
-        android:layout_marginTop="44dp"
-        android:src="@drawable/illustrain01_moji02"
-        app:layout_column="2"
-        app:layout_constraintEnd_toStartOf="@+id/imageThree"
-        app:layout_constraintStart_toEndOf="@+id/imageOne"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView3"
-        app:layout_row="0" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
 
-    <ImageView
-        android:id="@+id/imageThree"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_row="0"
-        android:layout_column="3"
-        android:layout_marginTop="44dp"
-        android:src="@drawable/illustrain01_moji03"
-        app:layout_column="3"
-        app:layout_constraintEnd_toStartOf="@+id/imageFour"
-        app:layout_constraintStart_toEndOf="@+id/imageTwo"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView3"
-        app:layout_row="0" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
-    <ImageView
-        android:id="@+id/imageFour"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="14dp"
-        android:src="@drawable/illustrain01_moji04"
-        app:layout_column="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageThree"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView3"
-        app:layout_row="0" />
+                    <com.beardedhen.androidbootstrap.AwesomeTextView
+                        android:id="@+id/ImgTextView2"
+                        android:layout_width="67dp"
+                        android:layout_height="56dp"
+                        android:autoSizeTextType="uniform"
+                        android:text="@string/img_count"
+                        android:textAlignment="center"
+                        app:bootstrapBrand="primary"
+                        app:layout_constraintEnd_toStartOf="@+id/ImgTextView3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImgTextView"
+                        app:showOutline="true" />
 
-    <ImageView
-        android:id="@+id/imageFive"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/illustrain01_moji05"
-        app:layout_constraintEnd_toStartOf="@+id/imageSix"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageZero" />
+                    <TextView
+                        android:id="@+id/ImgTextView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/img_count_msg"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ImgTextView2"
+                        app:layout_constraintTop_toBottomOf="@+id/ImgTextView" />
+                </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageSix"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:src="@drawable/illustrain01_moji06"
-        app:layout_constraintEnd_toStartOf="@+id/imageSeven"
-        app:layout_constraintStart_toEndOf="@+id/imageFive"
-        app:layout_constraintTop_toBottomOf="@+id/imageOne" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/imageZero"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:src="@drawable/illustrain01_moji10"
+                            app:layout_column="0"
+                            app:layout_constraintEnd_toStartOf="@+id/imageOne"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ImgTextView2"
+                            app:layout_row="0" />
 
-    <ImageView
-        android:id="@+id/imageSeven"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:src="@drawable/illustrain01_moji07"
-        app:layout_constraintEnd_toStartOf="@+id/imageEight"
-        app:layout_constraintStart_toEndOf="@+id/imageSix"
-        app:layout_constraintTop_toBottomOf="@+id/imageTwo" />
+                        <ImageView
+                            android:id="@+id/imageOne"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:src="@drawable/illustrain01_moji01"
+                            app:layout_column="1"
+                            app:layout_row="0" />
 
-    <ImageView
-        android:id="@+id/imageEight"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="1dp"
-        android:src="@drawable/illustrain01_moji08"
-        app:layout_constraintEnd_toStartOf="@+id/imageNine"
-        app:layout_constraintStart_toEndOf="@+id/imageSeven"
-        app:layout_constraintTop_toBottomOf="@+id/imageThree" />
+                        <ImageView
+                            android:id="@+id/imageTwo"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_row="0"
+                            android:layout_column="2"
+                            android:src="@drawable/illustrain01_moji02"
+                            app:layout_column="2"
+                            app:layout_row="0" />
 
-    <ImageView
-        android:id="@+id/imageNine"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="15dp"
-        android:src="@drawable/illustrain01_moji09"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageEight"
-        app:layout_constraintTop_toBottomOf="@+id/imageFour" />
+                        <ImageView
+                            android:id="@+id/imageThree"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_row="0"
+                            android:layout_column="3"
+                            android:src="@drawable/illustrain01_moji03"
+                            app:layout_column="3"
+                            app:layout_row="0" />
 
-    <ImageView
-        android:id="@+id/anomalocaris"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/coelacanth"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFive"
-        app:srcCompat="@drawable/anomalocaris" />
+                        <ImageView
+                            android:id="@+id/imageFour"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji04"
+                            app:layout_column="4"
+                            app:layout_row="0" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/imageFive"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji05" />
 
-    <ImageView
-        android:id="@+id/coelacanth"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        app:layout_constraintEnd_toStartOf="@+id/nautilus"
-        app:layout_constraintStart_toEndOf="@+id/anomalocaris"
-        app:layout_constraintTop_toBottomOf="@+id/imageSix"
-        app:srcCompat="@drawable/coelacanth" />
+                        <ImageView
+                            android:id="@+id/imageSix"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji06" />
 
-    <ImageView
-        android:id="@+id/nautilus"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        app:layout_constraintEnd_toStartOf="@+id/mammoth"
-        app:layout_constraintStart_toEndOf="@+id/coelacanth"
-        app:layout_constraintTop_toBottomOf="@+id/imageSeven"
-        app:srcCompat="@drawable/nautilus" />
+                        <ImageView
+                            android:id="@+id/imageSeven"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji07" />
 
-    <ImageView
-        android:id="@+id/mammoth"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        app:layout_constraintEnd_toStartOf="@+id/smilodon"
-        app:layout_constraintStart_toEndOf="@+id/nautilus"
-        app:layout_constraintTop_toBottomOf="@+id/imageEight"
-        app:srcCompat="@drawable/mammoth" />
+                        <ImageView
+                            android:id="@+id/imageEight"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji08" />
 
-    <ImageView
-        android:id="@+id/smilodon"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mammoth"
-        app:layout_constraintTop_toBottomOf="@+id/imageNine"
-        app:srcCompat="@drawable/smilodon" />
+                        <ImageView
+                            android:id="@+id/imageNine"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/illustrain01_moji09" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/anomalocaris"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/anomalocaris" />
 
-    <com.beardedhen.androidbootstrap.AwesomeTextView
-        android:id="@+id/ImgTextView2"
-        android:layout_width="67dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="6dp"
-        android:autoSizeTextType="uniform"
-        android:text="@string/img_count"
-        android:textAlignment="center"
-        app:bootstrapBrand="primary"
-        app:layout_constraintEnd_toStartOf="@+id/ImgTextView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView"
-        app:showOutline="true" />
+                        <ImageView
+                            android:id="@+id/coelacanth"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/coelacanth" />
 
-    <TextView
-        android:id="@+id/ImgTextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="36dp"
-        android:text="@string/img_count_msg"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ImgTextView2"
-        app:layout_constraintTop_toBottomOf="@+id/ImgTextView" />
+                        <ImageView
+                            android:id="@+id/nautilus"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/nautilus" />
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="52dp"
-        android:autoSizeMaxTextSize="@dimen/bootstrap_h1_text_size"
-        android:autoSizeTextType="uniform"
-        android:text="@string/img_reset"
-        app:bootstrapBrand="primary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/anomalocaris"
-        app:roundedCorners="true" />
+                        <ImageView
+                            android:id="@+id/mammoth"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/mammoth" />
+
+                        <ImageView
+                            android:id="@+id/smilodon"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginEnd="15dp"
+                            app:srcCompat="@drawable/smilodon" />
+                    </LinearLayout>
+
+<!--                    image-->
+                </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/button3"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:autoSizeMaxTextSize="@dimen/bootstrap_h1_text_size"
+                        android:autoSizeTextType="uniform"
+                        android:text="@string/img_reset"
+                        app:bootstrapBrand="primary"
+                        app:roundedCorners="true" />
+                    <Space
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"/>
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/button2"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:autoSizeMaxTextSize="@dimen/bootstrap_h5_text_size"
+                        android:autoSizeTextType="uniform"
+                        android:text="@string/img_send"
+                        app:bootstrapBrand="primary"
+                        app:roundedCorners="true" />
+
+<!--                    button-->
+                </LinearLayout>
+
+            </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

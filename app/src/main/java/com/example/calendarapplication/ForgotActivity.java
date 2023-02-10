@@ -32,6 +32,11 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot);
 
+        BootstrapButton  btn1 = findViewById(R.id.fgtButton);
+        btn1.setTextSize(25);
+        BootstrapButton  btn2 = findViewById(R.id.fgtButton2);
+        btn2.setTextSize(25);
+
         // Viewの取得
         current = findViewById(R.id.fgtCurrentPassword);
         nnew = findViewById(R.id.fgtNewPassword);
@@ -44,7 +49,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
         fgtButton2.setOnClickListener(this);
 
         // スクショを無効化
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         // 文字制限
         current.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
         nnew.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
